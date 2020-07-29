@@ -42,9 +42,9 @@ export const LoadImg: React.FC<Props> = ({
   return (
     <form
       className={cn({
-        Form__InfoContainer: true,
-        "Form__InfoContainer--active": isDragged,
-        "Form__InfoContainer--error": errorLoad,
+        LoadImg__InfoContainer: true,
+        "LoadImg__InfoContainer--active": isDragged,
+        "LoadImg__InfoContainer--error": errorLoad,
       })}
       onDragEnter={(e) => {
         stopEvents(e);
@@ -65,21 +65,23 @@ export const LoadImg: React.FC<Props> = ({
       }}
     >
       {src && (
-        <div className="Form__ImgContainer">
-          <img src={src} alt="file" className="Form__InfoImgNew" />
+        <div className="LoadImg__ImgContainer">
+          <img src={src} alt="file" className="LoadImg__InfoImgNew" />
         </div>
       )}
-      {!src && (
-        <img src="images/logo.svg" alt="logo" className="Form__InfoImg" />
-      )}
-      <p className="Form__Choose">
+      {!src && <img src="images/logo.svg" alt="logo" className="LoadImg__InfoImg" />}
+      <p className="LoadImg__Choose">
         {src ? `Drag & drop here to replace` : `Drag & drop here`}
       </p>
-      <p className="Form__Or">- or -</p>
+      <p className="LoadImg__Or">- or -</p>
 
       <label>
-        <input type="file" className="Form__FileInput" onChange={uploadFile} />
-        <span className="Form__FileInputSpan">
+        <input
+          type="file"
+          className="LoadImg__FileInput"
+          onChange={uploadFile}
+        />
+        <span className="LoadImg__FileInputSpan">
           {src && "Select file to replace"}
           {!src && "Select file to upload"}
         </span>
