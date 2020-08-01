@@ -7,6 +7,7 @@ import { hash } from "bcryptjs";
 import { useMutation } from "react-apollo";
 import { addUserMutation } from "../../helpers/gqlMutations";
 import { LoginFields } from "../LoginFields";
+import { useHistory } from "react-router-dom";
 
 const defaultUserSettings: UserData = {
   login: "",
@@ -21,6 +22,8 @@ const defaultUserSettingsErrors: UserDataErr = {
 };
 
 export const LoginPage = () => {
+  const history = useHistory();
+
   const [addNewUser] = useMutation(addUserMutation);
 
   const { login } = useContext(AuthContext);
@@ -102,6 +105,9 @@ export const LoginPage = () => {
             throw new Error(res);
           } else {
             login(res.token, res.userId);
+            history.push({
+              pathname: "/collection",
+            });
           }
         });
       } catch (e) {
