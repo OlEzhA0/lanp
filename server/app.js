@@ -25,7 +25,7 @@ app.use(express.json({ extended: true }));
 
 app.use('/auth', require('./routes/login.router'));
 
-mongoose.connect(`mongodb+srv://adminUser:TkjZe0KejzaVkeXs@testtask.g8enc.mongodb.net/testtask?retryWrites=true&w=majority`,
+mongoose.connect(`mongodb+srv://${process.env.mongoLogin}:${process.env.mongoPass}@testtask.g8enc.mongodb.net/testtask?retryWrites=true&w=majority`,
   { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true })
 
 
