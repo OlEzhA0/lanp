@@ -42,6 +42,7 @@
   }
 
   &__FileInputSpan {
+    margin-top: 0.5rem;
     font-size: 1rem;
     color: #4991e5;
     cursor: pointer;
@@ -49,6 +50,10 @@
     &:hover {
       text-decoration: underline;
     }
+  }
+
+  &__ImgDefault {
+    position: relative;
   }
 
   &__InfoImgNew {

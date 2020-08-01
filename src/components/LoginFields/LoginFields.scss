@@ -1,0 +1,28 @@
+.LoginFields {
+  &__Input {
+    margin-bottom: 10px;
+    width: 80%;
+    height: 40px;
+    box-sizing: border-box;
+    border: 1px solid #ebebeb;
+    outline: 0;
+    background-color: #fff;
+    border-radius: 10px;
+    font-size: 1.5rem;
+    padding-left: 1.5rem;
+    color: #1d1d1d;
+    transition: all 0.3s;
+
+    &::placeholder {
+      color: #c4c4c4;
+    }
+
+    &:focus {
+      border: 1px solid rgb(43, 143, 201);
+    }
+
+    &--err {
+      border: 1px solid rgb(199, 116, 116);
+    }
+  }
+}

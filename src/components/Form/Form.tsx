@@ -7,6 +7,12 @@ const allowedTypes = ["png", "jpeg"];
 export const Form = () => {
   const [fileSrc, setFileSrc] = useState("");
   const [errorLoad, setErrorLoad] = useState(false);
+  const [loading, setLoading] = useState(false);
+
+  const resetFields = () => {
+    setFileSrc("");
+    setErrorLoad(false);
+  };
 
   const validateFile = (file: File) => {
     if (file && file.type.startsWith("image")) {
@@ -24,11 +30,17 @@ export const Form = () => {
   };
 
   const handleReadFile = (file: File) => {
+    if (!file) {
+      setLoading(false);
+      return;
+    }
+
     const reader = new FileReader();
     reader.readAsDataURL(file);
     reader.onloadend = () => {
       if (typeof reader.result === "string") {
         const readerRes = reader.result;
+        setLoading(false);
         setFileSrc(readerRes);
       }
     };
@@ -49,6 +61,9 @@ export const Form = () => {
           onChange={handleReadFile}
           errorLoad={errorLoad}
           validateFile={validateFile}
+          resetFields={resetFields}
+          loading={loading}
+          setLoading={setLoading}
         />
       </div>
     </div>
