@@ -1,0 +1,41 @@
+.Form {
+  width: 400px;
+  height: 590px;
+  box-sizing: border-box;
+  background: #ffffff;
+  border: 1px solid #e8f1fb;
+  margin: 40px auto 0;
+  display: flex;
+  flex-direction: column;
+
+  &__TitleWrap {
+    padding: 21px 0 18px 29px;
+    box-sizing: border-box;
+    border-bottom: 1px solid #e8f1fb;
+  }
+
+  &__Title {
+    font-size: 20px;
+    color: #1a2533;
+    font-weight: bold;
+  }
+
+  &__Descr {
+    color: #6b85a3;
+    font-size: 1rem;
+  }
+
+  &__ImgForm {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 19px 20px 21px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+ 
+
+ 
+}
